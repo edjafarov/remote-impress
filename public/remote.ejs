@@ -1,0 +1,49 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<div id="manipulator" style="text-align:center; font-size: 200%;background-color: #ccc; position:
+absolute; top:0;bottom:0;left:0;right:0; padding: 30px;">slide left or right to switch slides</div>
+<script>
+
+
+var touchStart = null;
+var touchEnd = null;
+
+var socket = io.connect('<%=host%>/controller');
+socket.emit('takeControl', <%=id%>);
+
+
+function clean(){
+	$('#manipulator').html('slide left or right to switch slides');
+}
+clean();
+
+$('#manipulator').live('touchstart', function(evt){
+
+    touchStart = evt.originalEvent.touches[0].pageX;
+});
+
+$('#manipulator').live('touchmove', function(evt){
+    touchEnd = evt.originalEvent.touches[0].pageX;
+    if(touchStart - touchEnd < 0){
+		$('#manipulator').html("previous slide"); 
+		
+	}else{
+		$('#manipulator').html("next slide"); 
+	}
+});
+
+
+
+$('#manipulator').live('touchend', function(evt){
+
+touchEnd = evt.originalEvent.changedTouches[0].pageX;
+                    
+if(touchStart - touchEnd < 0){
+	clean();
+	socket.emit('previousSlide', <%=id%>);
+}else{
+	clean();
+	socket.emit('nextSlide', <%=id%>);
+}
+});
+</script>

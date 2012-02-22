@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <script src="http://localhost/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <script>
+      var socket = new io.connect("http://localhost/presentation");
+      var presentationId = null;
+      var wheel = null;
+      var cover = null;
+      socket.on('controllerUrl', function(data){
+        if(presentationId) data = presentationId;
+        var imgSrc = 'http://chart.apis.google.com/chart?cht=qr&chl='+ data +'&chs=400x400'
+        console.log( data);
+        var img = document.createElement('img');
+        img.src = imgSrc;
+        var mask = document.createElement('div');
+        mask.style.position = "absolute";
+        mask.style.left = 0;
+        mask.style.right = 0;
+        mask.style.top = 0;
+        mask.style.bottom = 0;
+        mask.style.backgroundColor = "#000";
+        mask.style.opacity = ".8";
+        var div = document.createElement('div');
+        div.innerHTML = "Take a wheel cap<br/>";
+        div.style.fontSize = "30px";
+        div.style.textAlign = "center";
+        div.style.position = "absolute";
+        div.style.width = "500px";
+        div.style.right = "0";
+        div.style.bottom = "0";
+      
+        div.style.backgroundColor = '#fff';
+        div.appendChild(img);
+        wheel = div;
+        cover = mask;
+        document.body.appendChild(mask);
+        document.body.appendChild(div);
+      });
+      socket.on('takeControl', function(){
+        console.log('controlTaken');
+        document.body.removeChild(wheel);
+        document.body.removeChild(cover);
+      });
+      socket.on('nextSlide', function(){
+        console.log("NextSlide");
+      });
+      socket.on('previousSlide', function(){
+        console.log("PreviousSlide");
+      });
+
+  </script>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius felis vitae sapien aliquet rhoncus. Maecenas nunc lorem, faucibus vitae commodo vel, scelerisque sed mi. Fusce quis quam non risus malesuada ultricies nec auctor sem. Quisque sagittis neque sagittis urna venenatis malesuada. Praesent a tincidunt ipsum. Mauris gravida varius velit, sed posuere mauris aliquam sit amet. Curabitur aliquet elementum mi et elementum. Nunc eros enim, posuere non accumsan sit amet, vulputate in nibh. Etiam aliquet metus quis dolor rutrum a vulputate arcu posuere. Mauris facilisis massa ornare elit elementum at placerat mi ullamcorper. Aenean suscipit vulputate porttitor. Aenean fringilla dignissim urna et imperdiet. Aliquam laoreet, velit eget feugiat tristique, sapien erat tempus ligula, in hendrerit libero arcu ac metus. Suspendisse pellentesque magna quis dui dictum nec rutrum tellus feugiat. Phasellus semper pharetra tincidunt. Aliquam congue lobortis iaculis.
+
+  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec eget varius libero. Nullam eget metus magna, et auctor odio. Curabitur placerat volutpat facilisis. Nunc laoreet vestibulum risus, in placerat quam tincidunt ut. Etiam gravida semper semper. Donec iaculis sapien at nibh congue vel lobortis erat molestie. Aliquam magna neque, interdum nec placerat ac, euismod vel magna. In eleifend metus ac mauris blandit viverra. Curabitur luctus sagittis leo, ac auctor lectus consequat ac. Sed bibendum pellentesque arcu eget luctus. Nulla pellentesque diam sed odio volutpat nec rhoncus turpis commodo.
+
+  Phasellus vitae dui risus. Ut eu nulla id ligula molestie iaculis eget aliquet lorem. Phasellus suscipit magna non sapien faucibus consectetur. Suspendisse potenti. Aliquam fermentum feugiat scelerisque. Suspendisse ut nisi quis nisi aliquet congue. Mauris imperdiet eros quis ligula pellentesque nec blandit purus dignissim. Donec tincidunt cursus venenatis. Ut ut tincidunt leo. Suspendisse facilisis commodo neque et sagittis. Nam tempus velit eu turpis aliquet posuere. Proin eleifend semper tempus.
+
+  Nam ipsum arcu, sodales quis tempus non, fermentum et est. Donec euismod erat a dui gravida pulvinar. Suspendisse potenti. Phasellus est lectus, venenatis dapibus lacinia ac, malesuada a sem. In vulputate feugiat feugiat. Nulla facilisi. Vestibulum lorem diam, hendrerit at sagittis sed, vulputate in justo. Nullam facilisis euismod urna quis imperdiet. Maecenas dignissim risus eget nibh lacinia tincidunt.
+
+  Sed varius tincidunt ligula, sed ornare diam euismod ut. Donec dapibus fermentum arcu, nec sodales mi pellentesque sit amet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque non elit sapien, vitae tempus turpis. Nulla semper odio eget dui elementum vel rutrum diam ultricies. Aenean neque lorem, lobortis id accumsan in, dictum vel justo. Quisque congue, nibh facilisis pellentesque dapibus, urna ante iaculis purus, quis sollicitudin augue nulla id velit. Quisque consectetur pulvinar augue pretium luctus. Aliquam erat volutpat. Duis a metus eu sapien pharetra pharetra. Duis cursus, diam et iaculis consequat, libero est rutrum lorem, eget sollicitudin felis leo in magna. Maecenas in venenatis mi. In in mattis est. Maecenas a ipsum at arcu semper rhoncus. Nullam viverra tortor in lacus tempus ultrices.
+
+
+    
+  </body>
+</html>

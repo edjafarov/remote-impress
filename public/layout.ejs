@@ -2,8 +2,13 @@
     <head>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
       <script src="<%=host%>/socket.io/socket.io.js"></script>
+      <link href="<%=host%>/css/bootstrap.css" rel="stylesheet"></link>
+      <script src="<%=host%>/js/bootstrap.js"></script>
+      <link rel="stylesheet" href="/google-code-prettify/prettify.css">
+      <script src="/google-code-prettify/prettify.js"></script>
+      <link href="<%=host%>/css/main.css" rel="stylesheet"></link>
     </head>
-    <body>
+    <body onload="prettyPrint()">
       <%-body%>
     </body>
 </html>

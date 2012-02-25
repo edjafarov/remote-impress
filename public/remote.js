@@ -1,9 +1,28 @@
      var socket = new io.connect("http://remote.nodester.com/presentation");
-     var presentationId = null;
+     var presentationIdUrl = null;
      var wheel = null;
      var cover = null;
      socket.on('controllerUrl', function (data) {
-         if (presentationId) data = presentationId;
+         if (presentationIdUrl) data = presentationIdUrl;
+         showQR(data);
+         presentationIdUrl = data;
+     });
+     socket.on('takeControl', function () {
+         document.body.removeChild(wheel);
+         document.body.removeChild(cover);
+         wheel = null;
+         cover = null;
+     });
+     socket.on('nextSlide', function () {
+         impress().next();
+     });
+     socket.on('previousSlide', function () {
+         impress().prev();
+     });
+     socket.on('wheelDown',function(){
+         showQR(presentationIdUrl);
+     });
+function showQR(data){
          var imgSrc = 'http://chart.apis.google.com/chart?cht=qr&chl=' + data + '&chs=400x400'
          var img = document.createElement('img');
          img.src = imgSrc;
@@ -32,14 +51,4 @@
          cover = mask;
          document.body.appendChild(mask);
          document.body.appendChild(div);
-     });
-     socket.on('takeControl', function () {
-         document.body.removeChild(wheel);
-         document.body.removeChild(cover);
-     });
-     socket.on('nextSlide', function () {
-         impress().next();
-     });
-     socket.on('previousSlide', function () {
-         impress().prev();
-     });
+}

@@ -11,6 +11,9 @@ var touchEnd = null;
 var socket = io.connect('<%=host%>/controller');
 socket.emit('takeControl', <%=id%>);
 
+socket.on('presentationDied', function () {
+    document.location.href = "http://remote.nodester.com/mobile";
+});
 
 function clean(){
 	$('#manipulator').html('slide left or right to switch slides');

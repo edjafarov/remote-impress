@@ -102,5 +102,5 @@ app.get('/mobile', function(req, res){
         host:host
     });
 });
-//app.listen(14770);
-app.listen(80);
+app.listen(14770);
+//app.listen(80);

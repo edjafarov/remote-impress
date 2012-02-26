@@ -105,7 +105,7 @@ app.get('/mobile', function(req, res){
 });
 
 
-app.get('/public/remote.js', function(req, res){
+app.get('/remote.js', function(req, res){
     res.render('public/remotejs.ejs',{
         host:host
     });

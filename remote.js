@@ -104,6 +104,7 @@ app.get('/mobile', function(req, res){
     });
 });
 
+/*
 fs.readFile('./public/remotejs.ejs', 'utf8', function (err, data) {
   if (err) throw err;
 fs.writeFile("./public/remote.js", ejs.render(data, {host: host}), function(err) {
@@ -116,7 +117,7 @@ fs.writeFile("./public/remote.js", ejs.render(data, {host: host}), function(err)
 }); 
   
 });
-
+*/
 
 
         app.listen(14770);

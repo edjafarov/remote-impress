@@ -2,9 +2,10 @@ var express = require('express');
 var app = express.createServer();
 var io = require('socket.io').listen(app);
 var events = require('events').EventEmitter;
+var ejs = require('ejs');
+var fs = require('fs');
 var observer = new events();
 var host = 'http://remote.nodester.com';
-//var host = 'http://192.168.1.101';
 var remotes = {};
 
 
@@ -102,5 +103,20 @@ app.get('/mobile', function(req, res){
         host:host
     });
 });
-app.listen(14770);
-//app.listen(80);
+
+fs.readFile('./public/remotejs.ejs', 'utf8', function (err, data) {
+  if (err) throw err;
+fs.writeFile("./public/remote.js", ejs.render(data, {host: host}), function(err) {
+    if(err) {
+        console.log(err);
+    } else {
+        app.listen(14770);
+        //app.listen(80);
+    }
+}); 
+  
+});
+
+
+
+

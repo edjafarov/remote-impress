@@ -108,7 +108,7 @@ app.get('/mobile', function(req, res){
 app.get('/remote.js', function(req, res){
     res.contentType('application/javascript');
     res.render('public/remotejs.ejs',{
-        host:host
+        layout:false,host:host
     });
 });
 

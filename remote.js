@@ -4,6 +4,7 @@ var io = require('socket.io').listen(app);
 var events = require('events').EventEmitter;
 var observer = new events();
 var host = 'http://remote.nodester.com';
+//var host = 'http://192.168.1.101';
 var remotes = {};
 
 
@@ -95,5 +96,11 @@ app.get('/', function(req, res){
         host:host
     });
 });
-app.listen(14770);
-//app.listen(80);
+
+app.get('/mobile', function(req, res){
+    res.render('public/mobile.ejs',{
+        host:host
+    });
+});
+//app.listen(14770);
+app.listen(80);

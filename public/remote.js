@@ -1,4 +1,5 @@
      var socket = new io.connect("http://remote.nodester.com/presentation");
+     //var socket = new io.connect("http://192.168.1.101/presentation");
      var presentationIdUrl = null;
      var wheel = null;
      var cover = null;

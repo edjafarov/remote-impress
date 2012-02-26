@@ -104,20 +104,13 @@ app.get('/mobile', function(req, res){
     });
 });
 
-/*
-fs.readFile('./public/remotejs.ejs', 'utf8', function (err, data) {
-  if (err) throw err;
-fs.writeFile("./public/remote.js", ejs.render(data, {host: host}), function(err) {
-    if(err) {
-        console.log(err);
-    } else {
-        app.listen(14770);
-        //app.listen(80);
-    }
-}); 
-  
+
+app.get('/public/remote.js', function(req, res){
+    res.render('public/remotejs.ejs',{
+        host:host
+    });
 });
-*/
 
 
-        app.listen(14770);
+
+app.listen(14770);

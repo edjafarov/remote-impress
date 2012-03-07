@@ -5,8 +5,15 @@ var events = require('events').EventEmitter;
 var ejs = require('ejs');
 var fs = require('fs');
 var observer = new events();
-var host = 'http://remote.nodester.com';
+var host = process.env.RMPORT;
 var remotes = {};
+var getIp = require('./getIP.js').getIP;
+
+if(!host){
+    getIp(function(error,ip){
+        host="http://" + ip;
+    }, false);
+}
 
 
 function getUniqueId(){
@@ -114,4 +121,4 @@ app.get('/remote.js', function(req, res){
 
 
 
-app.listen(14770);
+app.listen(process.env.RMPORT||80);

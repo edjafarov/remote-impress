@@ -5,7 +5,7 @@ var events = require('events').EventEmitter;
 var ejs = require('ejs');
 var fs = require('fs');
 var observer = new events();
-var host = process.env.RMPORT;
+var host = process.env.RMHOST;
 var remotes = {};
 var getIp = require('./getIP.js').getIP;
 

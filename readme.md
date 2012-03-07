@@ -6,6 +6,7 @@ makes your Impress.js presentation even more impressive with just two lines of c
 <script src="http://remote.nodester.com/remote.js">
 ```
 check demo:
+http://remote.nodester.com/presentation.html
 
 ##Install server locally
 To control your presentation with Iphone you need a server. You can use http://remote.nodester.com but if you have slow connection, latency will kill awesomeness of your presentation. To prevent it you need to install server locally.

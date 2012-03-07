@@ -1,15 +1,16 @@
 <div class="container">
   <div class="hero-unit">
     <h1>Impress.js remote controller</h1>
-    <p>makes your Impress.js presentation even more impressive with just two lines of code and an Iphone</p>
-    <pre class="prettyprint linenums lang-html">&lt;script src="http://remote.nodester.com/socket.io/socket.io.js"&gt;</script>
-&lt;script src="http://remote.nodester.com/remote.js"&gt;</script>
+    <p>makes your <a href="https://github.com/bartaz/impress.js">Impress.js</a> presentation even more impressive with just two lines of code and a phone (Iphone and Android tested)</p>
+    <pre class="prettyprint linenums lang-html">&lt;script src="<%=host%>/socket.io/socket.io.js"&gt;</script>
+&lt;script src="<%=host%>/remote.js"&gt;</script>
 </pre>
 <script>
 prettyPrint();
 </script>
    <p>
-    <a href="/presentation.html" class="btn-success btn-primary btn">Give me some Demo!</a> <!-- Place this tag where you want the +1 button to render -->
+    <a href="/presentation.html" class="btn-success btn">Give me some Demo!</a>
+    <a href="https://github.com/edjafarov/remote-impress" class="btn-primary btn">Get code from GitHub</a> <!-- Place this tag where you want the +1 button to render -->
 <span style="display: inline-block; vertical-align: middle;"> 
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://remote.nodester.com" data-via="edjafarov" data-size="large">Tweet</a>
 </span>
@@ -21,35 +22,43 @@ prettyPrint();
 
     </p>
   </div>
-  <p>If you have slow connection, latency will kill awesomeness of your presentation. To prevent it you need to install server locally. I will opensource the code soon <span style="display: inline-block; vertical-align: middle;"> <a href="https://twitter.com/edjafarov" class="twitter-follow-button" data-show-count="false">Follow @edjafarov</a>
-</span> to be updated. This will be <a href="https://plus.google.com/u/0/100598160817214911030">node.js</a> server as an easy to install NPM module.</p>
 
-  <!--<div class="row">
+  <div class="row">
   	<div class="span6">
-  	<h1>Install locally</h1>
-  	<p>To control your presentation with Iphone you need a server. You can use <a href="http://remote.nodester.com">http://remote.nodester.com</a> but slow connection could kill awesomeness of your presentation.</p>
-  	<p>To avoid problems you can easely install server locally on your machine.</p>
+  	<h1>Install server locally</h1>
+  	<p>To control your presentation with Iphone you need a server. You can use <a href="http://remote.nodester.com">http://remote.nodester.com</a> but if you have slow connection, latency will kill awesomeness of your presentation. To prevent it you need to install server locally.</p>
   	</div>
-	<div class="span6">
+  <div class="span6">
   	<h1>Windows</h1>
   	<ul>
   		<li>Download and install <a href="http://nodejs.org/dist/v0.6.11/node-v0.6.11.msi">node</a></li>
-  		<li>run npm install remote-impress</li>
-  		<li>run remote-start</li>
-  	</ul>
+      <li>open terminal, install and run remote-impress
+<pre class="prettyprint linenums">   $ npm install remote-impress -g
+   $ remote-impress</pre>
+   </li>
+  	 <li>run <a href="http://localhost">http://localhost</a> in browser</li>
+    </ul>
   	</div>  	
   </div>
   <div class="row">
   	<div class="span6">
   	<h1>Linux</h1>
   	<ul>
-  		<li>Download and install <a href="http://nodejs.org/dist/v0.6.11/node-v0.6.11.msi">node</a></li>
-  		<li>sudo run npm install remote-impress</li>
-  		<li>run sudo remote-start</li>
+  		<li>Install <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">node.js</a></li>
+      <li>install and run remote-impress
+<pre class="prettyprint linenums">   $ sudo npm install remote-impress -g
+   $ sudo remote-impress</pre></li>
+  		<li>run <a href="http://localhost">http://localhost</a> in browser</li>
   	</ul>
   	</div>
-  </div> --> 
+  </div> 
+
+  <p style="text-align:right;"><span style="display: inline-block; vertical-align: middle;"> <a href="https://twitter.com/edjafarov" class="twitter-follow-button" data-show-count="false">Follow @edjafarov</a>
+</span> to be updated. </p>
+
 </div>
+
+
 
 
 <!-- Place this render call where appropriate -->

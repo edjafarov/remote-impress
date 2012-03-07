@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var express = require('express');
 var app = express.createServer();
 var io = require('socket.io').listen(app);
@@ -11,7 +13,7 @@ var getIp = require('./getIP.js').getIP;
 
 if(!host){
     getIp(function(error,ip){
-        host="http://" + ip;
+        host="http://" + ip[0];
     }, false);
 }
 

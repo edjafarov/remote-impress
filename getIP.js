@@ -10,7 +10,7 @@ module.exports.getIP = (function () {
     case 'win32':
     //case 'win64': // TODO: test
         command = 'ipconfig';
-        filterRE = /\bIP-[^:\r\n]+:\s*([^\s]+)/g;
+        filterRE = /\bIP[^:\r\n]+:\s*([^\s]+)/g;
         // TODO: find IPv6 RegEx
         break;
     case 'darwin':

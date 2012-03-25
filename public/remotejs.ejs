@@ -16,7 +16,7 @@
      });
 
 
-     var actions = function getActions(){
+     function getActions(){
          if(impress && impress instanceof Function){
              return {   
                     next: function(){
@@ -36,11 +36,11 @@
                  }
              }
          }
-     }()
+     }
 
 
-     socket.on('nextSlide', actions.next);
-     socket.on('previousSlide', actions.prev);
+     socket.on('nextSlide', function(){getActions().next});
+     socket.on('previousSlide', function(){getActions().prev});
 c
      socket.on('wheelDown',function(){
          showQR(presentationIdUrl);

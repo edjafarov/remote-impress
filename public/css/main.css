@@ -33,3 +33,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background:none; }
   pre .atn, code .atn { color: #404 }
   pre .atv, code .atv { color: #060 }
 }
+
+.container {
+  width: 1000px;
+}

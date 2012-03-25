@@ -1,7 +1,7 @@
 {
   "name": "remote-impress",
   "description": "This is remote Impress.js presentation controller. Allows to use phone for switching slides.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/edjafarov/remote-impress",
   "repository": {
     "type": "git",

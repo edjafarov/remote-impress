@@ -1,12 +1,15 @@
 # Impress.js remote controller
-makes your Impress.js presentation even more impressive with just two lines of code and a phone (Iphone and Android tested)
+makes your Impress.js or Deck.js presentation even more impressive with just two lines of code and a phone (Iphone and Android tested)
 
 ``` html
 <script src="http://remote.nodester.com/socket.io/socket.io.js">
 <script src="http://remote.nodester.com/remote.js">
 ```
-check demo:
+check Impress.js demo:
 http://remote.nodester.com/presentation.html
+
+check Deck.js demo:
+http://remote.nodester.com/deckPresentation.html
 
 ##Install server locally
 To control your presentation with Iphone you need a server. You can use http://remote.nodester.com but if you have slow connection, latency will kill awesomeness of your presentation. To prevent it you need to install server locally.

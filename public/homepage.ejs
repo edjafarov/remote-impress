@@ -1,25 +1,46 @@
+<!-- FB like -->
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=136144103167276";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<meta property="og:title" content="Impress.js remote controller" />
+<meta property="fb:admins" content="1185732141" />
+<meta property="og:url" content="http://remote.nodester.com" />
+
+
 <div class="container">
   <div class="hero-unit">
     <h1>Impress.js remote controller</h1>
-    <p>makes your <a href="https://github.com/bartaz/impress.js">Impress.js</a> presentation even more impressive with just two lines of code and a phone (Iphone and Android tested)</p>
+    <p>makes your <a href="https://github.com/bartaz/impress.js">Impress.js</a> and <a href="http://imakewebthings.com/deck.js/">Deck.js</a> presentations even more impressive with just two lines of code and a phone (Iphone and Android tested)</p>
+    Put following lines in your presentation:
     <pre class="prettyprint linenums lang-html">&lt;script src="<%=host%>/socket.io/socket.io.js"&gt;</script>
 &lt;script src="<%=host%>/remote.js"&gt;</script>
 </pre>
 <script>
 prettyPrint();
 </script>
-   <p>
-    <a href="/presentation.html" class="btn-success btn">Give me some Demo!</a>
+   <div>
+    
+    <a href="/presentation.html" class="btn-success btn">Impress.js Demo!</a>
+    <a href="/presentation.html" class="btn-success btn">Deck.js Demo!</a>
     <a href="https://github.com/edjafarov/remote-impress" class="btn-primary btn">Get code from GitHub</a> <!-- Place this tag where you want the +1 button to render -->
 <span style="display: inline-block; vertical-align: middle;"> 
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://remote.nodester.com" data-via="edjafarov" data-hashtags="nodejs" data-size="large">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://remote.nodester.com" data-via="edjafarov" data-hashtags="nodejs,impressjs,deckjs,presentation" data-size="large">Tweet</a>
 </span>
 <span style="display: inline-block; vertical-align: middle;"> 
-<g:plusone annotation="inline" width="120" href="http://remote.nodester.com"></g:plusone>
+<g:plusone width="100" href="http://remote.nodester.com"></g:plusone>
 </span>
-
-
-    </p>
+<span style="display: inline-block; vertical-align: middle;"> 
+    <span id="fb-root"></span>
+    <div class="fb-like" data-href="http://remote.nodester.com" data-send="false" data-layout="button_count" 
+data-width="100" data-show-faces="false"></div>
+</span>
+</div>
   </div>
 
   <div class="row">

@@ -14,12 +14,34 @@
          wheel = null;
          cover = null;
      });
-     socket.on('nextSlide', function () {
-         impress().next();
-     });
-     socket.on('previousSlide', function () {
-         impress().prev();
-     });
+
+
+     var actions = function getActions(){
+         if(impress && impress instanceof Function){
+             return {   
+                    next: function(){
+                        impress().next();
+                    },
+                    prev: function(){
+                        impress().prev();
+                    }
+             }
+         }else if($ && $.deck instanceof Function){
+             return {
+                 next: function(){
+                     $.deck('next');
+                 },
+                 prev: function(){
+                     $.deck('prev');
+                 }
+             }
+         }
+     }()
+
+
+     socket.on('nextSlide', actions.next);
+     socket.on('previousSlide', actions.prev);
+c
      socket.on('wheelDown',function(){
          showQR(presentationIdUrl);
      });

@@ -17,6 +17,7 @@
 
 
      function getActions(){
+         try{
          if(impress && impress instanceof Function){
              return {   
                     next: function(){
@@ -26,7 +27,9 @@
                         impress().prev();
                     }
              }
-         }else if($ && $.deck instanceof Function){
+         }             
+         }catch(e){
+            if($ && $.deck instanceof Function){
              return {
                  next: function(){
                      $.deck('next');
@@ -35,8 +38,9 @@
                      $.deck('prev');
                  }
              }
-         }
-     }
+         }             
+    }
+}
 
 
      socket.on('nextSlide', function(){getActions().next()});

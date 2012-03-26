@@ -38,6 +38,15 @@
                      $.deck('prev');
                  }
              }
+            } else if($ && $.jmpress instanceof Function && $("#jmpress, *[data-remote]")) {
+             return {
+                 next: function(){
+                     $("#jmpress, *[data-remote]").jmpress('next');
+                 },
+                 prev: function(){
+                     $("#jmpress, *[data-remote]").jmpress('prev');
+                 }
+             }
          }             
     }
 }

@@ -11,10 +11,10 @@ http://remote.nodester.com/presentation.html
 check Deck.js demo:
 http://remote.nodester.com/deckPresentation.html
 
-##Install server locally
+## Install server locally
 To control your presentation with Iphone you need a server. You can use http://remote.nodester.com but if you have slow connection, latency will kill awesomeness of your presentation. To prevent it you need to install server locally.
 
-###Windows
+### Windows
 * Download and install node
 * open terminal, install and run remote-impress
 
@@ -24,7 +24,7 @@ To control your presentation with Iphone you need a server. You can use http://r
 ```
 * run http://localhost in browser
 
-###Linux
+### Linux
 * Install node.js
 * install and run remote-impress
 
